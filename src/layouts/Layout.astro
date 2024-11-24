@@ -1,0 +1,33 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="NIPPLY THE BRAIN - The most intelligent token on Solana" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/nipply-logo.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" is:inline></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        AOS.init({
+          duration: 1000,
+          once: true,
+          disable: 'mobile'
+        });
+      });
+    </script>
+  </head>
+  <body class="bg-gradient-to-b from-purple-900 via-purple-800 to-purple-900 text-white">
+    <slot />
+  </body>
+</html>
